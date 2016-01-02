@@ -106,7 +106,7 @@ static int sushi_release(struct inode* inode, struct file* filp)
 	return 0;
 }
 
-int init_module(void)
+static int __init dev_init_module(void)
 {
 	int retval;
 	dev_t dev, devno;
@@ -133,7 +133,7 @@ int init_module(void)
 	return 0;
 }
 
-void cleanup_module(void)
+static void __exit dev_cleanup_module(void)
 {
 	dev_t devno;
 
@@ -144,3 +144,6 @@ void cleanup_module(void)
 	unregister_chrdev(devmajor, devname);
 	printk(KERN_INFO "%s : removed from kernel\n", msg);
 }
+
+module_init(dev_init_module);
+module_exit(dev_cleanup_module);
