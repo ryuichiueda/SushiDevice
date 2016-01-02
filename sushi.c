@@ -16,7 +16,6 @@ MODULE_LICENSE("GPL");
 
 static int devmajor = 0;
 static int devminor = 0;
-static char* devname  = "Linux Sushi Server";
 static char* msg = "module [sushi.o]";
 
 static struct cdev cdv;
@@ -141,7 +140,7 @@ static void __exit dev_cleanup_module(void)
 	devno = MKDEV(devmajor, devminor);
 	device_destroy(cls, devno);
 	class_destroy(cls);
-	unregister_chrdev(devmajor, devname);
+	unregister_chrdev(devmajor, 1);
 	printk(KERN_INFO "%s : removed from kernel\n", msg);
 }
 
