@@ -38,13 +38,15 @@ static struct file_operations sushi_fops =
 	release : sushi_release,
 };
 
-static int get_pseudo_rand(void) {
+static int get_pseudo_rand(void)
+{
 	struct timespec t;
 	getnstimeofday(&t);
 	return (int)t.tv_nsec;
 }
 
-static int sushi_open(struct inode* inode, struct file* filp){
+static int sushi_open(struct inode* inode, struct file* filp)
+{
 	printk(KERN_INFO "%s : open() called\n", msg);
 
 	spin_lock(&spn_lock);
