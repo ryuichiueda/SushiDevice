@@ -1,0 +1,3 @@
+#rules for sushi
+
+KERNEL=="sushi0",SUBSYSTEM=="sushi",ACTION=="add",MODE="0666"
