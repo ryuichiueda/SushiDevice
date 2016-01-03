@@ -11,7 +11,17 @@
 	$ make
 	$ sudo insmod sushi.ko
 	$ sudo chmod 666 /dev/sushi0
-	$ cat /dev/sushi0
+	$ cat /dev/sushi0 | head
+	🍣
+	🍣
+	🍣
+	🍣
+	🍣
+	🍣
+	🍣 🍺
+	🍣
+	🍣
+	🍣
 
 Enjoy.
 
