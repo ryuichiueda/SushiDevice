@@ -125,7 +125,7 @@ static ssize_t sushi_write(struct file* filp, const char* buf, size_t count, lof
 	if(copy_from_user(&c,buf,sizeof(char))){
 		return -EFAULT;
 	}
-	if(c >= '0' && c <= '9'){
+	if(c >= '1' && c <= '9'){
 		num_per_line = (int)c - 48;
 	}
 
